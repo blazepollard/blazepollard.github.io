@@ -1,0 +1,43 @@
+// mixins
+@mixin width($class) {
+  @if $class == watch {
+    @media (max-width: $watch) { @content; }
+  }
+  @else if $class == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $class == tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+  @else if $class == laptop {
+    @media (max-width: $laptop) { @content; }
+  }
+  @else if $class == monitor {
+    @media (max-width: $monitor) { @content; }
+  }
+  @else {
+    @warn "Breakpoint error";
+  }
+}
+@mixin height($class) {
+  @if $class == watch {
+    @media (max-height: $watch) { @content; }
+  }
+  @else if $class == mobile {
+    @media (max-height: $mobile) { @content; }
+  }
+  @else {
+    @warn "Breakpoint error";
+  }
+}
+@mixin scheme($class) {
+  @if $class == light {
+    @media (prefers-color-scheme: light) { @content; }
+  }
+  @else if $class == dark {
+    @media (prefers-color-scheme: dark) { @content; }
+  }
+  @else {
+    @warn "Only *light* or *dark* supported.";
+  }
+}

@@ -1,0 +1,88 @@
+// reset
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// layout
+body {
+  background: $gray;
+  position: relative;
+  animation-name: slideup;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  @keyframes slideup {
+    0% {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+    25% {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  max-width: $monitor;
+  width: 100vw;
+  height: 100vh;
+  @include width(tablet) {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:nth-child(even) {
+    .col {
+      align-items: flex-end;
+      text-align: right;
+      @include width(tablet) {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+    padding: 4rem;
+    width: 100%;
+    max-width: $mobile;
+    @include width(tablet) {
+      padding: 2rem;
+      max-width: 100%;
+    }
+    & > * {
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// threejs
+canvas {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+  outline: none;
+}

@@ -1,0 +1,25 @@
+{% include head.html %}
+  <body>
+    <canvas id="canvas3d"></canvas>
+    <main>
+      {{ content }}
+    </main>
+    <script>
+        // Global namespace (backwards-compatibility)
+        var SPE = {};
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.spline.design/lib/anime.min.js"></script>
+    <script src="https://cdn.spline.design/lib/spline.runtime.min.js"></script>
+    <script src="../js/assets.js"></script>
+    <script src="../js/scene.js"></script>
+    <script src="../js/main.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12605747-67"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-12605747-67');
+    </script>
+  </body>
+</html>
