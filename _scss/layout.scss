@@ -7,6 +7,11 @@ html {
 }
 
 // layout
+hr {
+  border: none;
+  border-radius: 1px;
+  border-top: 2px solid rgba(white,0.1);
+}
 body {
   background: $gray;
   position: relative;
@@ -31,46 +36,22 @@ body {
 }
 main {
   display: flex;
-  justify-content: space-between;
   max-width: $monitor;
-  width: 100vw;
-  height: 100vh;
-  @include width(tablet) {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-  }
+  width: 100%;
 }
 .row {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  &:nth-child(even) {
-    .col {
-      align-items: flex-end;
-      text-align: right;
-      @include width(tablet) {
-        align-items: flex-start;
-        text-align: left;
-      }
-    }
+  padding: 4rem;
+  @include width(mobile) {
+    padding: 2rem;
+    padding-top: 4rem;
   }
-  .col {
-    display: flex;
-    flex-direction: column;
+  & > * {
     z-index: 9;
-    padding: 4rem;
-    width: 100%;
-    max-width: $mobile;
-    @include width(tablet) {
-      padding: 2rem;
-      max-width: 100%;
-    }
-    & > * {
-      margin-bottom: 2rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

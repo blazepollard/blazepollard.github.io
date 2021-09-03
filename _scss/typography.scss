@@ -34,10 +34,10 @@ p {
   font-weight: 400;
 }
 h1 {
-  font-family: $cursive;
-  font-size: 3.9rem;
-  line-height: 1em;
-  font-weight: 700;
+  color: white;
+  font-size: 3.2rem;
+  line-height: 1.2em;
+  font-weight: 400;
   @include width(mobile) {
     font-size: 3.2rem;
   }
