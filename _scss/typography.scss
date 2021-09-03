@@ -47,9 +47,6 @@ h2 {
   line-height: 1.4em;
   font-weight: 500;
   color: rgba(white,0.6);
-  @include width(mobile) {
-    font-size: 1.2rem;
-  }
 }
 .system {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
